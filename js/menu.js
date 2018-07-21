@@ -3,3 +3,10 @@ $(document).keyup(function(e){
     $('.grid').toggleClass('grid-show');
   }
 });
+
+
+var btn = $('.btn-menu');
+
+btn.click(function(){
+  $(this).toggleClass('btn-menu-act');
+});
