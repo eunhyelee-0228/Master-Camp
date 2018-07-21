@@ -338,10 +338,24 @@ input[name="search"]{
   /* 데스크탑 내비게이션 */
   .nav-container {
     background-color: #988574;
+    box-shadow: 0 -2px 5px 0 rgba(0,0,0,0.85), 0 2px 5px 0 rgba(0,0,0,0.85);;
   }
-  .navigation {
-    
+
+  .menu {
+    display:flex;
+    justify-content: space-between;
+    color: #fff;
+    padding: 20px 0;
   }
+  .menu-item-text {
+    font-size: 1.8rem;
+    font-family: "Noto Sans Bold";
+    text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
+  }
+  .sub-menu li{
+    margin: 10px 0 0 20px;
+  }
+
   /* 데스크탑 메인 콘텐츠 */
   .main {
     height: 70vh;
