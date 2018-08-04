@@ -304,8 +304,12 @@ text-overflow:ellipsis;
 }
 /* 공통 푸터 */
 .footer{
-  background: violet;
-
+  background:#988574;
+  padding: 15px 20px;
+  color:#fff;
+}
+.address {
+  margin-bottom: 15px;
 }
 
 @media screen and (max-width: 999px){
@@ -499,7 +503,14 @@ text-overflow:ellipsis;
 .twitter-profile {
   text-align:right;
 }
+/*모바일 슬로건*/
+.slogan {
+  display:none;
+}
   /* 모바일 푸터 */
+  .address span {
+    display:block;
+  }
 }
 
 @media screen and (min-width: 1000px) {
@@ -530,6 +541,7 @@ text-overflow:ellipsis;
   .header,
   .navigation,
   .main,
+  .slogan,
   .footer {
     width: 1000px;
     margin: 0 auto;
@@ -643,30 +655,72 @@ input[name="search"]{
 .recommend-book-cover {
   width: 60%;
 }
-
+/*데스크탑 새소식*/
   .news{
     flex-basis: 660px;
   }
+
+  /*데스크탑 게시판*/
   .board{
     /* flex-basis: 320px; */
     width: 320px;
   }
+
+  /*데스크탑 인기사이트*/
   .favorite-site{
     flex-basis: 235px;
     order: 1;
   }
+  /*데스크탑 트위터 */
   .twitter{
     flex-basis: 405px;
   }
   .twitter-wrap {
     min-height:100px;
   }
-
-
+/*데스크탑 슬로건*/
+.slogan {
+  position:relative;
+}
+.slogan-heading {
+  width: 110px;
+  height: 83px;
+  position: absolute;
+  left: 35px;
+  bottom: -25px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  /*flex~부터 한게 모던한 방법으로 한것. 전통적으로는 text-align:center 쓰고 line-height: 83px 주는 방법이 있다*/
+}
+.slogan-heading::after{
+  content:"";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: orange;
+  top: 0;
+  left:0;
+  background: url('images/coffee.png') no-repeat;
+}
+.slogan-content {
+  padding: 10px 50px 10px 165px;
+}
+.slogan-content q {
+  font-weight: 700;
+}
+.slogan-content q::before{
+  content:'"';
+  font-size:3rem;
+  font-weight:700;
+  position:relative; /*relative는 absolute의 기준으로만 쓰이는거 말고 단독으로도 사용할 수 있다.*/
+  top: 10px;
+}
   /* 데스크탑 푸터 */
   .footer-container {
     background-color: #988574;
   }
   .footer {
+    text-align:center;
   }
 }
