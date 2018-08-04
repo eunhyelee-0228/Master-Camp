@@ -100,7 +100,23 @@ body {
   max-width:100%;
   height: auto;
 }
-
+.rwd-video{
+  width: 100%;
+  height: auto;
+}
+.rwd-iframe{
+  position: relative;
+  width: 100%;
+  height: 0 !important;
+  padding-top: calc(315 / 560 * 100%);
+}
+.rwd-iframe iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 /*  공통 레이아웃 */
 .header, .navigation, .main, .footer{
@@ -184,19 +200,27 @@ input[name="search"]{
 .recommend-book-summary {
   background: pink;
 }
-.main{
-  background: orange;
+/* 공통 새소식 */
+.news-container{
+  margin: 20px 0;
 }
 
-.recommend-book {
-  background: yellow;
+.news-date{
+  display: block;
+  text-align: right;
+  margin-top: 10px;
 }
-.news{
-  background: brown;
-}
+
 .board{
   background: skyblue;
 }
+
+/*공통 게시판*/
+.board-list {
+  margin-top:20px;
+}
+
+
 .favorite-site{
   background: teal;
 }
