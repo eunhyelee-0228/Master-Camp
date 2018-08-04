@@ -1,0 +1,35 @@
+@charset "utf-8";
+@keyframes text1{
+  from{
+    background: yellow;
+    width:0;
+    overflow:hidden;
+    white-space: nowrap;
+  }
+  50% {
+    background: green;
+  }
+  to{
+    background: pink;
+    width: 100%;
+  }
+}
+.text1 {
+  box-sizing: border-box;
+  border: 1px solid #aaa;
+  padding: 20px 0px;
+  background: yellow;
+  transition: all 5000ms;
+  /* animation-name: text1;
+  animation-duration: 3000ms;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out; */
+  animation: text1 3000ms forwards 2s infinite alternate ease-in-out;
+}
+
+/* .text1:hover{
+  background: pink;
+} */
