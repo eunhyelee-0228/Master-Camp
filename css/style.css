@@ -34,7 +34,7 @@ footer, header, hgroup, main, menu, nav, section {
 	display: block;
 }
 
-ul {
+ul{
 	list-style: none;
 }
 blockquote, q {
@@ -133,13 +133,18 @@ input[name="search"]{
 
 /* 공통 메인 */
 
+/* 공통 메인 섹션*/
+.main > section {
+  margin-top: 20px;
+}
+
 /* 공통 메인 섹션 제목 */
 .section-heading {
   font-size:1.3em;
   font-family: "Noto Sans Bold";
   height: 60px;
   padding-left:60px;
-  background: pink url("images/sprite_main.png") no-repeat 0 0;
+  background: url("images/sprite_main.png") no-repeat 0 0;
 }
 .en-heading {
   display:block;
@@ -197,9 +202,7 @@ input[name="search"]{
   font-size:1.8em;
    color: #ACD373;
 }
-.recommend-book-summary {
-  background: pink;
-}
+
 /* 공통 새소식 */
 .news-container{
   margin: 20px 0;
@@ -212,22 +215,93 @@ input[name="search"]{
 }
 
 .board{
-  background: skyblue;
+  position:relative; /*얘가 기준이 되어야 하니까 relative*/
 }
 
 /*공통 게시판*/
 .board-list {
   margin-top:20px;
 }
+.board-list li {
 
-
-.favorite-site{
-  background: teal;
-}
-.twitter{
-  background: tomato;
+  display:flex;
+  justify-content: space-between;
 }
 
+.board-list a{
+
+width: calc(100% - 100px); 
+/* 추후 점검 필요 */
+white-space : nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+}
+.board-more {
+
+  position: absolute;
+  top:0;
+  right:0;
+}
+.board-more::before {
+  color:hsla(100, 50%, 60%, 1);
+}
+/*공통 인기 사이트*/
+.favorite-site-list{
+
+  margin-top: 20px;
+  overflow: hidden;
+  counter-reset:0;
+}
+.favorite-site-list li {
+  counter-increment: number;
+  margin-top: 10px;
+}
+.favorite-site-list li::before{
+  content : counter(number, decimal);
+  background: #EEA60A;
+  color:#fff;
+  padding:0 0.5em;
+  margin-right: 1em;
+  border-radius:50%;
+}
+/*공통 트위터*/
+
+.twitter-wrap {
+      position:relative;
+      padding-right: 25%;
+}
+
+.twitter-user-info {
+  margin-top: 20px;
+}
+.twitter-user-id, .twitter-user-name {
+  display:inline;
+}
+.twitter-user-name{
+    color:#6AAEE6;
+}
+.twitter-user-id {
+  font-weight:700;
+}
+.twitter-profile {
+  position: absolute;
+  top:0;
+  right:0;
+  width:25%;
+  padding-left: 1em;
+}
+.twitter-thumbnail {
+  border: 1px solid #000;
+  padding: 5px;
+  border-radius: 50%;
+}
+.twitter-summary {
+  margin: 10px 0;
+}
+.twitter-date {
+  display:block;
+  text-align:right;
+}
 /* 공통 푸터 */
 .footer{
   background: violet;
@@ -412,11 +486,18 @@ input[name="search"]{
   .main{
     display: flex;
     flex-direction: column;
-
+    padding: 0 20px;
   }
 /* 모바일 추천 서적 */
 .recommend-book-cover {
   width: 70%;
+}
+/*모바일 트위터*/
+.twitter-wrap {
+  min-height:125px;
+}
+.twitter-profile {
+  text-align:right;
 }
   /* 모바일 푸터 */
 }
@@ -567,15 +648,19 @@ input[name="search"]{
     flex-basis: 660px;
   }
   .board{
-    flex-basis: 320px;
+    /* flex-basis: 320px; */
+    width: 320px;
   }
   .favorite-site{
     flex-basis: 235px;
+    order: 1;
   }
   .twitter{
     flex-basis: 405px;
   }
-
+  .twitter-wrap {
+    min-height:100px;
+  }
 
 
   /* 데스크탑 푸터 */
